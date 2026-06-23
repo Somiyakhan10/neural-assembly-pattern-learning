@@ -154,4 +154,4 @@ pip install -r requirements.txt
 # Run the app
 streamlit run app.py
 
-## Demo Link: https://huggingface.co/spaces/Somiya855/Neural-Assembly-Pattern-Learning
+Demo Link: https://huggingface.co/spaces/Somiya855/Neural-Assembly-Pattern-Learning
