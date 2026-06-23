@@ -140,6 +140,15 @@ Full control over brain structure and training parameters.
 
 <img width="424" height="865" alt="image" src="https://github.com/user-attachments/assets/12eef704-885e-4e88-b83a-a1ca33cdb0c3" />
 
+MNIST Dataset
+Handwritten digits (0-4) - 28x28 grayscale images.
+<img width="1296" height="728" alt="image" src="https://github.com/user-attachments/assets/4d459f19-d13b-4c44-b7bd-0d4325a02ab2" />
+<img width="1322" height="514" alt="image" src="https://github.com/user-attachments/assets/8b37c0b4-59cf-4f49-9ae8-ff3f376982c9" />
+
+
+Fashion-MNIST Dataset
+<img width="1308" height="728" alt="image" src="https://github.com/user-attachments/assets/ade2dad2-3b48-493c-9d02-89619284cfe2" />
+<img width="1335" height="632" alt="image" src="https://github.com/user-attachments/assets/576defa8-4d29-4a5e-b2ad-73d1c1a31d7e" />
 
 ---
 
