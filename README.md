@@ -45,8 +45,7 @@ Watch neural assemblies form in real-time with interactive visualizations.
 - Stability tracking over rounds
 - Assembly distinctiveness matrix
 
-![Uploading image.png…]()
-
+<img width="1847" height="825" alt="image" src="https://github.com/user-attachments/assets/73cd5cb0-bed3-412f-96dc-3c76eabec52d" />
 
 ---
 
@@ -154,3 +153,5 @@ pip install -r requirements.txt
 
 # Run the app
 streamlit run app.py
+
+## Demo Link: https://huggingface.co/spaces/Somiya855/Neural-Assembly-Pattern-Learning
