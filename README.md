@@ -1,4 +1,4 @@
-# 🧠 Neural Assembly Pattern Learning
+#  Neural Assembly Pattern Learning
 
 An interactive Streamlit simulation of the **Assembly Calculus** framework.
 
