@@ -45,7 +45,8 @@ Watch neural assemblies form in real-time with interactive visualizations.
 - Stability tracking over rounds
 - Assembly distinctiveness matrix
 
-<img width="1883" height="838" alt="image" src="https://github.com/user-attachments/assets/031dc00e-2921-4674-b9c6-21e8a568d033" />
+![Uploading image.png…]()
+
 
 ---
 
