@@ -1,14 +1,3 @@
----
-title: Neural Assembly Pattern Learning
-colorFrom: blue
-colorTo: indigo
-sdk: streamlit
-sdk_version: "1.38.0"
-python_version: "3.11"
-app_file: app.py
-pinned: false
----
-
 #  Neural Assembly Pattern Learning
 
 [![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://your-space-url.hf.space)
