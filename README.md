@@ -1,6 +1,5 @@
 #  Neural Assembly Pattern Learning
-
-[![Hugging Face](https://huggingface.co/spaces/Somiya855/Neural-Assembly-Pattern-Learning)
+[![Hugging Face](https://img.shields.io/badge/🤗-Neural%20Assembly%20Pattern%20Learning-ffd21e)](https://huggingface.co/spaces/Somiya855/Neural-Assembly-Pattern-Learning)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ##  Overview
