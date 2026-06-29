@@ -116,13 +116,13 @@ class NeuralAssemblySimulator:
             self.labels = cached.get("labels")
             patterns = cached["patterns"]
             self._init_patterns(patterns, real_size)
-            st.success(f"✅ Loaded MNIST from cache! ({len(patterns)} patterns, 28×28)")
+            st.success(f" Loaded MNIST from cache! ({len(patterns)} patterns, 28×28)")
             return patterns
 
         # ---- 2. scikit-learn / OpenML ----
         try:
             from sklearn.datasets import fetch_openml
-            st.info("📥 Downloading MNIST from OpenML (this may take a moment)…")
+            st.info(" Downloading MNIST from OpenML (this may take a moment)…")
             X, y = fetch_openml(
                 "mnist_784", version=1, return_X_y=True, as_frame=False, parser="auto"
             )
@@ -138,14 +138,14 @@ class NeuralAssemblySimulator:
                 patterns = self._images_to_patterns(selected_images, selected_labels)
                 self._init_patterns(patterns, real_size)
                 self._save_to_cache("mnist_real", patterns, self.labels)
-                st.success(f"✅ MNIST loaded from OpenML! ({len(patterns)} digits, 28×28)")
+                st.success(f" MNIST loaded from OpenML! ({len(patterns)} digits, 28×28)")
                 return patterns
         except Exception as e:
-            st.warning(f"⚠️ OpenML failed: {str(e)[:60]}")
+            st.warning(f" OpenML failed: {str(e)[:60]}")
 
         # ---- 3. Direct download from Yann LeCun's mirror ----
         try:
-            st.info("📥 Trying direct MNIST download…")
+            st.info(" Trying direct MNIST download…")
             url_img = "http://yann.lecun.com/exdb/mnist/train-images-idx3-ubyte.gz"
             url_lbl = "http://yann.lecun.com/exdb/mnist/train-labels-idx1-ubyte.gz"
             r_img = requests.get(url_img, timeout=30)
@@ -168,15 +168,15 @@ class NeuralAssemblySimulator:
                     patterns = self._images_to_patterns(selected_images, selected_labels)
                     self._init_patterns(patterns, real_size)
                     self._save_to_cache("mnist_real", patterns, self.labels)
-                    st.success(f"✅ MNIST downloaded directly! ({len(patterns)} digits, 28×28)")
+                    st.success(f" MNIST downloaded directly! ({len(patterns)} digits, 28×28)")
                     return patterns
         except Exception as e:
-            st.warning(f"⚠️ Direct download failed: {str(e)[:60]}")
+            st.warning(f" Direct download failed: {str(e)[:60]}")
 
         # ---- 4. TensorFlow/Keras ----
         try:
             from tensorflow.keras.datasets import mnist as tf_mnist  # type: ignore
-            st.info("📥 Loading MNIST via TensorFlow…")
+            st.info(" Loading MNIST via TensorFlow…")
             (x_train, y_train), _ = tf_mnist.load_data()
             selected_images, selected_labels = [], []
             for i in range(min(n_samples, 10)):
@@ -189,14 +189,14 @@ class NeuralAssemblySimulator:
                 patterns = self._images_to_patterns(selected_images, selected_labels)
                 self._init_patterns(patterns, real_size)
                 self._save_to_cache("mnist_real", patterns, self.labels)
-                st.success(f"✅ MNIST loaded via TensorFlow! ({len(patterns)} digits, 28×28)")
+                st.success(f" MNIST loaded via TensorFlow! ({len(patterns)} digits, 28×28)")
                 return patterns
         except Exception as e:
-            st.warning(f"⚠️ TensorFlow failed: {str(e)[:60]}")
+            st.warning(f" TensorFlow failed: {str(e)[:60]}")
 
         # ---- 5. Fallback: hand-crafted digit-like patterns at 784 px ----
         st.warning(
-            "⚠️ All MNIST download methods failed. "
+            " All MNIST download methods failed. "
             "Generating digit-like patterns at 28×28 as a visual substitute."
         )
         return self._create_realistic_mnist_patterns(n_samples, real_size)
@@ -216,13 +216,13 @@ class NeuralAssemblySimulator:
             self.labels = cached.get("labels")
             patterns = cached["patterns"]
             self._init_patterns(patterns, real_size)
-            st.success(f"✅ Loaded Fashion-MNIST from cache! ({len(patterns)} patterns, 28×28)")
+            st.success(f" Loaded Fashion-MNIST from cache! ({len(patterns)} patterns, 28×28)")
             return patterns
 
         # ---- 2. OpenML ----
         try:
             from sklearn.datasets import fetch_openml
-            st.info("📥 Downloading Fashion-MNIST from OpenML…")
+            st.info(" Downloading Fashion-MNIST from OpenML…")
             X, y = fetch_openml(
                 "Fashion-MNIST", version=1, return_X_y=True, as_frame=False, parser="auto"
             )
@@ -237,15 +237,15 @@ class NeuralAssemblySimulator:
                 patterns = self._images_to_patterns(selected_images, selected_labels)
                 self._init_patterns(patterns, real_size)
                 self._save_to_cache("fashion_real", patterns, self.labels)
-                st.success(f"✅ Fashion-MNIST loaded from OpenML! ({len(patterns)} items, 28×28)")
+                st.success(f" Fashion-MNIST loaded from OpenML! ({len(patterns)} items, 28×28)")
                 return patterns
         except Exception as e:
-            st.warning(f"⚠️ OpenML failed: {str(e)[:60]}")
+            st.warning(f" OpenML failed: {str(e)[:60]}")
 
         # ---- 3. TensorFlow/Keras ----
         try:
             from tensorflow.keras.datasets import fashion_mnist as tf_fashion  # type: ignore
-            st.info("📥 Loading Fashion-MNIST via TensorFlow…")
+            st.info(" Loading Fashion-MNIST via TensorFlow…")
             (x_train, y_train), _ = tf_fashion.load_data()
             selected_images, selected_labels = [], []
             for i in range(min(n_samples, 10)):
@@ -258,14 +258,14 @@ class NeuralAssemblySimulator:
                 patterns = self._images_to_patterns(selected_images, selected_labels)
                 self._init_patterns(patterns, real_size)
                 self._save_to_cache("fashion_real", patterns, self.labels)
-                st.success(f"✅ Fashion-MNIST loaded via TensorFlow! ({len(patterns)} items, 28×28)")
+                st.success(f" Fashion-MNIST loaded via TensorFlow! ({len(patterns)} items, 28×28)")
                 return patterns
         except Exception as e:
-            st.warning(f"⚠️ TensorFlow failed: {str(e)[:60]}")
+            st.warning(f" TensorFlow failed: {str(e)[:60]}")
 
         # ---- 4. Fallback at 784 px ----
         st.warning(
-            "⚠️ All Fashion-MNIST download methods failed. "
+            " All Fashion-MNIST download methods failed. "
             "Generating clothing-like patterns at 28×28 as a visual substitute."
         )
         return self._create_realistic_fashion_patterns(n_samples, real_size)
