@@ -1,6 +1,6 @@
 #  Neural Assembly Pattern Learning
 
-[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://your-space-url.hf.space)
+[![Hugging Face](https://huggingface.co/spaces/Somiya855/Neural-Assembly-Pattern-Learning)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ##  Overview
